@@ -302,21 +302,40 @@
     <div class="container">
       <h2 class="section-title">La solution AquaGuard</h2>
       <p class="section-subtitle">
-        AquaGuard propose une approche préventive et intelligente de la détection des fuites d’eau.
-        Le système surveille le réseau en continu, identifie les anomalies et peut déclencher des actions de protection
-        pour limiter les dégâts et réduire les pertes d’eau.
+        AquaGuard est un système intelligent de sécurité hydrique conçu pour détecter les fuites d’eau à un stade précoce,
+        réduire le gaspillage et protéger les habitations contre les dégâts matériels. Installé sur le réseau d’eau,
+        il surveille en continu le comportement de l’installation afin d’identifier rapidement toute anomalie.
       </p>
       <div class="grid-2">
         <div class="card">
-          <h3>Détection intelligente</h3>
+          <h3>Surveillance en temps réel</h3>
           <p>
-            Le système analyse les variations du réseau d’eau afin d’identifier des comportements anormaux pouvant indiquer une fuite.
+            Le système observe en permanence les paramètres du réseau d’eau, tels que le débit, la pression,
+            la durée de consommation ou la présence d’humidité. Cette surveillance continue permet de repérer
+            rapidement tout comportement inhabituel pouvant indiquer une fuite.
           </p>
         </div>
         <div class="card">
-          <h3>Prévention des dégâts</h3>
+          <h3>Détection intelligente des anomalies</h3>
           <p>
-            En cas d’anomalie, AquaGuard alerte l’utilisateur et peut activer une réponse automatique pour réduire les dommages.
+            AquaGuard ne se limite pas à signaler une surconsommation. Il analyse les données collectées pour distinguer
+            une utilisation normale d’un dysfonctionnement réel. Cette logique permet de rendre la détection plus pertinente
+            et de réduire les fausses alertes.
+          </p>
+        </div>
+        <div class="card">
+          <h3>Alerte et protection</h3>
+          <p>
+            Lorsqu’une fuite potentielle est détectée, le système peut avertir l’utilisateur afin de permettre une intervention rapide.
+            Selon la configuration, AquaGuard peut également déclencher une action automatique de protection pour limiter
+            les pertes d’eau et réduire les dégâts.
+          </p>
+        </div>
+        <div class="card">
+          <h3>Solution évolutive</h3>
+          <p>
+            AquaGuard est pensé comme une solution évolutive. Il peut intégrer plusieurs capteurs ou zones de surveillance
+            afin d’améliorer la précision de la détection et, à terme, permettre une localisation plus fine de l’origine de la fuite.
           </p>
         </div>
       </div>
@@ -325,30 +344,93 @@
 
   <section id="fonctionnement">
     <div class="container">
-      <h2 class="section-title">Comment ça fonctionne</h2>
+      <h2 class="section-title">Fonctionnement du système</h2>
       <p class="section-subtitle">
-        AquaGuard s’appuie sur une logique simple et efficace pour protéger les installations hydriques.
+        Le prototype AquaGuard repose sur une architecture simple mais efficace combinant capteurs,
+        microcontrôleur et système d’alerte. L’objectif est de détecter rapidement la présence d’eau
+        anormale autour des tuyauteries et d’activer une réponse de protection.
       </p>
       <div class="steps">
         <div class="step">
           <div class="step-number">1</div>
-          <h3>Détection</h3>
-          <p>Des capteurs surveillent l’installation et repèrent les anomalies liées à une fuite potentielle.</p>
+          <h3>Détection d’humidité</h3>
+          <p>
+            Un capteur d’humidité placé près de la tuyauterie surveille la présence d’eau.
+            Lorsqu’une fuite se produit et que l’eau entre en contact avec le capteur,
+            celui‑ci envoie immédiatement un signal au système.
+          </p>
         </div>
         <div class="step">
           <div class="step-number">2</div>
-          <h3>Analyse</h3>
-          <p>Le système interprète les données pour distinguer une utilisation normale d’un dysfonctionnement réel.</p>
+          <h3>Analyse par Arduino</h3>
+          <p>
+            Le signal est traité par une carte Arduino qui agit comme le cerveau du système.
+            Le microcontrôleur analyse l’information reçue afin de confirmer la détection d’une fuite.
+          </p>
         </div>
         <div class="step">
           <div class="step-number">3</div>
-          <h3>Alerte</h3>
-          <p>L’utilisateur est averti rapidement afin d’intervenir avant que les dégâts ne s’aggravent.</p>
+          <h3>Alerte immédiate</h3>
+          <p>
+            Lorsque la fuite est confirmée, le système déclenche une alerte visuelle
+            à l’aide d’une LED rouge afin d’indiquer qu’un problème est détecté
+            dans l’installation hydrique.
+          </p>
         </div>
         <div class="step">
           <div class="step-number">4</div>
-          <h3>Protection</h3>
-          <p>Le système peut déclencher une action automatique pour limiter le gaspillage et protéger le logement.</p>
+          <h3>Coupure de l’eau</h3>
+          <p>
+            Le système peut également simuler ou activer la fermeture d’une électrovanne
+            afin de couper automatiquement l’arrivée d’eau et limiter les dégâts
+            ainsi que le gaspillage.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="innovation">
+    <div class="container">
+      <h2 class="section-title">Innovation</h2>
+      <p class="section-subtitle">
+        AquaGuard se distingue des solutions traditionnelles par son approche préventive
+        et accessible. Le projet vise à rendre la protection contre les fuites d’eau
+        plus simple, plus intelligente et plus abordable.
+      </p>
+      <div class="grid-2">
+        <div class="card">
+          <h3>Détection précoce</h3>
+          <p>
+            Contrairement à de nombreuses solutions qui interviennent après l’apparition
+            de dégâts visibles, AquaGuard détecte les fuites dès leur apparition,
+            permettant une intervention rapide.
+          </p>
+        </div>
+        <div class="card">
+          <h3>Solution accessible</h3>
+          <p>
+            Le système utilise des composants électroniques simples et abordables
+            comme Arduino et des capteurs d’humidité, ce qui permet de proposer
+            une solution potentiellement plus économique que certains systèmes
+            industriels existants.
+          </p>
+        </div>
+        <div class="card">
+          <h3>Approche évolutive</h3>
+          <p>
+            Le prototype peut évoluer vers une solution plus avancée intégrant
+            plusieurs capteurs, un suivi numérique et des notifications à distance
+            via une plateforme ou une application.
+          </p>
+        </div>
+        <div class="card">
+          <h3>Contribution à la durabilité</h3>
+          <p>
+            En réduisant les pertes d’eau et en détectant rapidement les anomalies,
+            AquaGuard contribue à une gestion plus responsable des ressources
+            hydriques.
+          </p>
         </div>
       </div>
     </div>
@@ -362,7 +444,7 @@
           Vous souhaitez en savoir plus sur AquaGuard, découvrir le prototype ou échanger autour du projet ?
           N’hésitez pas à nous contacter pour toute information ou opportunité de collaboration.
         </p>
-        <p><strong>Email :</strong> contact@aquaguard.ma</p>
+        <p><strong>Email :</strong> aquaguard84@gmail.com</p>
       </div>
     </div>
   </section>
