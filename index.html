@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AquaGuard - Sécurité Hydrique Intelligente</title>
+  <style>
+    :root {
+      --blue: #0b5ed7;
+      --cyan: #19b6d2;
+      --green: #3cb371;
+      --dark: #12304a;
+      --text: #334155;
+      --light: #f8fbff;
+      --white: #ffffff;
+      --border: #dbe7f1;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background: var(--white);
+      line-height: 1.6;
+    }
+
+    .container {
+      width: min(1100px, 92%);
+      margin: 0 auto;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+      z-index: 100;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 14px 0;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo img {
+      max-height: 54px;
+      width: auto;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 22px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--dark);
+      font-weight: 600;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #eef8ff 0%, #ffffff 45%, #edfdf6 100%);
+      padding: 90px 0 70px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .tag {
+      display: inline-block;
+      background: #e8f7fb;
+      color: var(--blue);
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+
+    h1 {
+      font-size: clamp(2.2rem, 5vw, 4rem);
+      line-height: 1.1;
+      margin: 0 0 18px;
+      color: #0f172a;
+    }
+
+    .hero p {
+      font-size: 1.12rem;
+      margin-bottom: 24px;
+      max-width: 650px;
+    }
+
+    .cta {
+      display: inline-block;
+      text-decoration: none;
+      background: linear-gradient(90deg, var(--cyan), var(--blue));
+      color: var(--white);
+      padding: 14px 22px;
+      border-radius: 12px;
+      font-weight: 700;
+      box-shadow: 0 10px 24px rgba(25, 182, 210, 0.18);
+    }
+
+    .hero-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 28px;
+      box-shadow: 0 14px 34px rgba(15, 23, 42, 0.06);
+    }
+
+    .stat {
+      border-left: 4px solid var(--cyan);
+      padding-left: 14px;
+      margin-bottom: 18px;
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 1.6rem;
+      color: var(--dark);
+    }
+
+    section {
+      padding: 78px 0;
+    }
+
+    section:nth-child(even) {
+      background: var(--light);
+    }
+
+    .section-title {
+      font-size: 2rem;
+      color: #0f172a;
+      margin: 0 0 10px;
+    }
+
+    .section-subtitle {
+      max-width: 760px;
+      margin: 0 0 34px;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 28px;
+    }
+
+    .card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 24px;
+      box-shadow: 0 8px 22px rgba(15, 23, 42, 0.04);
+    }
+
+    .card h3 {
+      margin-top: 0;
+      color: var(--dark);
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .step {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 22px;
+      text-align: left;
+    }
+
+    .step-number {
+      display: inline-flex;
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      color: var(--white);
+      background: linear-gradient(90deg, var(--green), var(--blue));
+      margin-bottom: 14px;
+    }
+
+    .contact-box {
+      background: linear-gradient(135deg, var(--dark), var(--blue));
+      color: var(--white);
+      border-radius: 24px;
+      padding: 34px;
+    }
+
+    footer {
+      padding: 24px 0 40px;
+      text-align: center;
+      color: #64748b;
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 900px) {
+      .hero-grid, .grid-2, .steps {
+        grid-template-columns: 1fr;
+      }
+
+      nav {
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .nav-links {
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <div class="logo"><img src="logo AquaGuard.png" alt="Logo AquaGuard" style="height: 54px; width: auto; display: block;" /></div>
+        <div class="nav-links">
+          <a href="#home">Accueil</a>
+          <a href="#problem">Problématique</a>
+          <a href="#solution">Solution</a>
+          <a href="#fonctionnement">Fonctionnement</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero" id="home">
+    <div class="container hero-grid">
+      <div>
+        <div class="tag">Sécurité hydrique intelligente</div>
+        <h1>AquaGuard protège les habitations contre les fuites d’eau.</h1>
+        <p>
+          AquaGuard est un système intelligent conçu pour détecter, prévenir et limiter les fuites d’eau.
+          Grâce à une surveillance continue du réseau, il réduit le gaspillage, les dégâts matériels et les coûts.
+        </p>
+        <a class="cta" href="#solution">Découvrir la solution</a>
+      </div>
+      <div class="hero-card">
+        <div class="stat">
+          <strong>20 % à 40 %</strong>
+          de l’eau distribuée peut être perdue à cause des fuites dans les réseaux et les installations.
+        </div>
+        <div class="stat">
+          <strong>10 % à 30 %</strong>
+          des bâtiments présentent des fuites non détectées, souvent découvertes trop tard.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="problem">
+    <div class="container">
+      <h2 class="section-title">La problématique</h2>
+      <p class="section-subtitle">
+        Les fuites d’eau représentent un problème majeur à la fois économique et environnemental.
+        Souvent invisibles ou détectées tardivement, elles provoquent un gaspillage important d’eau potable,
+        des factures élevées et des dégâts matériels coûteux.
+      </p>
+      <div class="grid-2">
+        <div class="card">
+          <h3>Un enjeu mondial</h3>
+          <p>
+            On estime que <strong>20 % à 40 % de l’eau distribuée</strong> est perdue à cause de fuites dans les réseaux et les installations.
+            Dans un contexte de stress hydrique croissant, ces pertes aggravent la pression sur les ressources en eau.
+          </p>
+        </div>
+        <div class="card">
+          <h3>Un risque pour les bâtiments</h3>
+          <p>
+            Environ <strong>10 % à 30 % des bâtiments</strong> présentent des fuites non détectées.
+            Lorsqu’elles sont encastrées ou invisibles, elles sont souvent découvertes après l’apparition de dégâts importants.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="solution">
+    <div class="container">
+      <h2 class="section-title">La solution AquaGuard</h2>
+      <p class="section-subtitle">
+        AquaGuard propose une approche préventive et intelligente de la détection des fuites d’eau.
+        Le système surveille le réseau en continu, identifie les anomalies et peut déclencher des actions de protection
+        pour limiter les dégâts et réduire les pertes d’eau.
+      </p>
+      <div class="grid-2">
+        <div class="card">
+          <h3>Détection intelligente</h3>
+          <p>
+            Le système analyse les variations du réseau d’eau afin d’identifier des comportements anormaux pouvant indiquer une fuite.
+          </p>
+        </div>
+        <div class="card">
+          <h3>Prévention des dégâts</h3>
+          <p>
+            En cas d’anomalie, AquaGuard alerte l’utilisateur et peut activer une réponse automatique pour réduire les dommages.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="fonctionnement">
+    <div class="container">
+      <h2 class="section-title">Comment ça fonctionne</h2>
+      <p class="section-subtitle">
+        AquaGuard s’appuie sur une logique simple et efficace pour protéger les installations hydriques.
+      </p>
+      <div class="steps">
+        <div class="step">
+          <div class="step-number">1</div>
+          <h3>Détection</h3>
+          <p>Des capteurs surveillent l’installation et repèrent les anomalies liées à une fuite potentielle.</p>
+        </div>
+        <div class="step">
+          <div class="step-number">2</div>
+          <h3>Analyse</h3>
+          <p>Le système interprète les données pour distinguer une utilisation normale d’un dysfonctionnement réel.</p>
+        </div>
+        <div class="step">
+          <div class="step-number">3</div>
+          <h3>Alerte</h3>
+          <p>L’utilisateur est averti rapidement afin d’intervenir avant que les dégâts ne s’aggravent.</p>
+        </div>
+        <div class="step">
+          <div class="step-number">4</div>
+          <h3>Protection</h3>
+          <p>Le système peut déclencher une action automatique pour limiter le gaspillage et protéger le logement.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <div class="contact-box">
+        <h2 class="section-title" style="color: white; margin-top: 0;">Contact</h2>
+        <p>
+          Vous souhaitez en savoir plus sur AquaGuard, découvrir le prototype ou échanger autour du projet ?
+          N’hésitez pas à nous contacter pour toute information ou opportunité de collaboration.
+        </p>
+        <p><strong>Email :</strong> contact@aquaguard.ma</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      © 2026 AquaGuard — Sécurité Hydrique Intelligente
+    </div>
+  </footer>
+</body>
+</html>
